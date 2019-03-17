@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+			let conter = [{
+					a: "http:192.168.2.158/img/12",
+					b: 'kkk1',
+					c: 'test1'
+				},
+				{
+					a: "http:195.168.2.158/img/34",
+					b: 'kkk2',
+					c: 'test'
+				},
+				{
+					a: "http:192.168.2.158/img/56",
+					b: 'kkk3',
+					c: 'test'
+				}
+			]
+			var newcenter=[]
+			window.location.host;  //域名
+			window.location.hostname; 
+			window.location.href; 
+			window.location.pathname; 
+			window.location.protocol; 
+			window.location.port //端口
+
+			//替换数组中的某个键，然后替换相应的当前域名
+			var contera = conter.forEach((r) => {
+				var cen=new URL(r.a)
+				console.log(cen)
+				var imgadd=cen.pathname
+				r.a=window.location.host+imgadd
+                newcenter.push(r);
+				return r;     
+			})
+		     console.log(newcenter)
+		</script>
+	</body>
+
+</html>
